@@ -5,17 +5,20 @@ para corrigir a ordem dos parâmetros caso a função receba o valor maior antes
 */
 
 const impares = (inicio=0,fim=100) => {
-    if(inicio < fim){
-        for(inicio;inicio <fim;inicio++){
-            if(inicio%2 != 0 ){
-                console.log(inicio);
-            }
+    if(inicio > fim){
+        inicio = fim + inicio
+        fim = inicio - fim
+        inicio = inicio - fim
+    } 
+    for(inicio;inicio <fim;inicio++){
+        if(inicio%2 == 1 ){
+            console.log(inicio);
         }
-    }else{
-        console.log('o inicio devera conter um numero inferior ao fim');
-    }
+    }    
+    
     
 }
 
 impares(0,4);
+impares(10,5);
 impares();
